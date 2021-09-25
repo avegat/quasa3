@@ -1,1 +1,1 @@
-{"satellites":[{"name":"skywalker","distance":100,"coordinates":{"x":-500,"y":-200},"message":["hola","","","Juan Carlo","chupa","pija"]},{"name":"kenobi","distance":100,"coordinates":{"x":100,"y":-100},"message":["hola","","","Juan Carlo",""]},{"name":"sato","distance":100,"coordinates":{"x":500,"y":100},"message":["hola","","","Juan Carlo",""]}]}
+{"satellites":[{"name":"skywalker","distance":100,"coordinates":{"x":-500,"y":-200}},{"name":"kenobi","distance":100,"coordinates":{"x":100,"y":-100}},{"name":"sato","distance":100,"coordinates":{"x":500,"y":100}}]}
