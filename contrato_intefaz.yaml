@@ -1,0 +1,153 @@
+swagger: "2.0"
+
+info:
+  version: "0.0.1"
+  title: API Operación Fuego Quasar.
+  description: |
+    API para recibir mensajes en los satelites pertenecientes a la alianza.
+
+host: mision-estrella.el.r.appspot.com
+
+basePath: /proyecto-quasar
+
+schemes:
+  - https
+
+produces:
+  - application/json
+
+
+paths:
+  '/topsecret':
+    post:
+      summary: "Obtiene los mensajes recibidos por los satelites."
+      tags:
+      - GetMessages
+      description: "Obtiene los mensajes recibidos por los satelites."
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: body
+          schema:
+            $ref: '#/definitions/listaMensajesSatelites'
+          in: body
+          required: true
+      responses:
+        200:
+         description: Ok
+         schema:
+          $ref: '#/definitions/posicion'
+        404:
+          description: No es posible determinar ubicación
+          
+
+  '/topsecret_split/:{satellite_name}':
+    post:
+      summary: "Obtiene mensaje por satelite individual"
+      tags:
+        - GetMessages
+      description: "Obtiene mensaje por satelite individual"
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: satellite_name
+          required: true
+          type: string
+        - name: body
+          schema:
+            $ref: '#/definitions/objetoMensaje'
+          in: body
+          required: true
+      responses:
+        200:
+         description: Ok
+         schema:
+          $ref: '#/definitions/posicion'
+        404:
+          description: No existe suficiente información
+    get:
+      summary: "Obtiene mensaje por satelite individual"
+      tags:
+        - GetMessages  
+      parameters:
+        - in: path
+          name: satellite_name
+          required: true
+          type: string  
+      responses:
+        200:
+         description: Ok
+         schema:
+          $ref: '#/definitions/posicion'
+        404:
+          description: No existe suficiente información
+
+
+
+
+
+definitions:
+  listaMensajesSatelites:
+    type: object
+    properties:
+      satellites:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              example: kenobi
+              description: Nombre del satelite
+            distance:
+              type: string
+              example: -100.0
+              description: Distancia de entre el emisor y el satelite
+            message:
+              type: array
+              items:
+                type: string
+                example: Este
+  
+  objetoMensaje:
+    type: object
+    properties:
+      name:
+        type: string
+        example: kenobi
+        description: Nombre del satelite
+      distance:
+        type: string
+        example: -100.0
+        description: Distancia de entre el emisor y el satelite
+      message:
+        type: array
+        items:
+          type: string
+          example: Este    
+    
+    
+  posicion:
+    type: object
+    properties:
+      position:
+        type: object
+        properties:
+          x:
+            type: number
+            example:  -487.28591250000005
+            description: Coordenada satelital x
+          y:
+            type: number
+            example: 1557.0142250000004
+            description: Coordenada satelital y
+      message:
+        type: string
+        example: Este es un mensaje secreto
+        description:  Cadena resultado del mensaje recibido por cada satelite
+        

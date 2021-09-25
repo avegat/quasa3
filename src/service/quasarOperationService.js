@@ -15,8 +15,10 @@ const satelliteDistanceAdd=(satellite)=>{
     return database.updateDataBase(satellite);
 }
 
+const satelliteDistanceStored=()=>{
+    return database.getDataBaseInfo();
+}
 
 
 
-
-module.exports= {quasarPosicionService,quasarMessagesService,satelliteDistanceAdd};
+module.exports= {quasarPosicionService,quasarMessagesService,satelliteDistanceAdd,satelliteDistanceStored};

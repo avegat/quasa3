@@ -9,6 +9,7 @@ const cors = require('cors');
 const xss =require('xss-clean');
 require('express-async-errors');
 const routes =require('./routes/router');
+const byDefault = require('./routes/by-default')
 
 /**
  * @fileoverview Configuracion de la aplicación Express.
@@ -27,7 +28,7 @@ app.use(cookieParser());
 
 
 app.use('/proyecto-quasar', routes);
-
+app.use('*',byDefault);
 
 
 module.exports= app;

@@ -6,7 +6,6 @@ const satoSatellite={name:"sato",x:500,y:100};
 const getLocation=(req, res)=>{
     const satellites=[];
     const messages=[];
-    console.log(req.body)
     const requestSatellites=req.body.satellites;
     requestSatellites.forEach(element => {
         messages.push(element.message);
@@ -49,8 +48,20 @@ const getLocation=(req, res)=>{
     
 }
 
+const getPositionStored=(req,res,next)=>
+{
+    try{
+        let response=services.satelliteDistanceStored();
+        res.status(200).send(response);
+    }catch(error){
+        console.log(error)
+        res.status(404).send("No es posible calcular posición")
+    }
+    
+
+}
+
 const addSatelliteDistance=(req, res, next)=>{
-    console.log("controller")
     const satellite={
         "name":req.params.id,
         "distance":req.body.distance,
@@ -63,5 +74,5 @@ const addSatelliteDistance=(req, res, next)=>{
         res.status(404).send("No es posible calcular posición")
     }
 }
-module.exports={getLocation,addSatelliteDistance};
+module.exports={getLocation,addSatelliteDistance,getPositionStored};
 
