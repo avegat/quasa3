@@ -16,7 +16,11 @@ Iniciar el servidor:
 
     $ npm start
     
+Ejecutar pruebas unitarias:
+
+    $ npm npm run test:unit
+
 # Recursos
 Contrato de Interfaz.
 - [Contrato Interfaz.yaml](https://github.com/avegat/OperacionFuegoQuasar/blob/main/contrato_intefaz.yaml) donde se encuentra especificado el funcionamiento del microservicio, se realizo con el stardard OpenAPI Specification (OAS), puede consultar arrastrando el archivo o copiando el contenido en un edito swagger(https://editor.swagger.io/).
-- [Requerimiento].   
+- [Requerimiento](https://github.com/avegat/OperacionFuegoQuasar/blob/main/OperacionFuegodeQuasar.pdf).   
