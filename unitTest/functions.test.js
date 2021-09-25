@@ -1,4 +1,5 @@
 
+const { assert } = require("chai");
 const chai =require("chai");
 const expect = chai.expect;
 
@@ -15,43 +16,58 @@ describe("getMessages",()=>{
     before(()=>{
         allMessajes=[
             {messages:[
-                ["Este","es","","mensaje"],
-                ["Este","","un",""],
-                ["Este","","","","mensaje"],
-                ["Este","","","",""]
+                ["Este","","","mensaje"],
+                ["","es","","","secreto"],
+                ["Este","","un","",""]
             ]
             },
             {messages:[
-                ["Este","es","","mensaje"],
+                ["Este","","","mensaje"],
                 ["Este","","un",""],
                 ["Este","","","","mensaje"],
-                ["Este","","","",""]
+                ["Este","es","","","claro"]
             ]
             },
             {messages:[
-                ["Este","es","","mensaje"],
-                ["Este","","un",""],
-                ["Este","","","","mensaje"],
-                ["Este","","","",""]
-            ]
-            },
-            {messages:[
-                ["Este","es","","mensaje"],
-                ["Este","","un",""],
-                ["Este","","","","mensaje"],
-                ["Este","","","",""]
+                ["Tenemos","","falla",""],
+                ["","","una",""],
+                ["Tenemos","","","falla","con"],
+                ["Tenemos","una","","","","la","terminal"]
             ]
             }
         ]
     })
 
 
-    it("Ordena los mensajes recibidos", ()=>{
+    it("Ordena los mensajes recibidos: 'Este es un mensaje secreto'", ()=>{
         try {
-            const mensaje=calculator.obtieneMensajeCompleto(allMessajes[0].messages)
-            console.log("mensaje",mensaje);
+            let mensaje=calculator.obtieneMensajeCompleto(allMessajes[0].messages)
+            expect( mensaje ).to.be.a( 'string' );
+            expect( mensaje ).to.equal( 'Este es un mensaje secreto' );
         } catch (error) {
-            console.log("axios esta tronando: "+error);
+            console.log("Ocurrió un error al obtener mensaje completo"+error);
+            expect(error).to.be.undefined;
+        }
+    })
+
+    it("Ordena los mensajes recibidos: 'Este es un mensaje claro'", ()=>{
+        try {
+            let mensaje=calculator.obtieneMensajeCompleto(allMessajes[1].messages)
+            expect( mensaje ).to.be.a( 'string' );
+            expect( mensaje ).to.equal( 'Este es un mensaje claro' );     
+        } catch (error) {
+            console.log("Ocurrió un error al obtener mensaje completo"+error);
+            expect(error).to.be.undefined;
+        }
+    })
+
+    it("Ordena los mensajes recibidos: 'Tenemos una falla con la terminal'", ()=>{
+        try {
+            let mensaje=calculator.obtieneMensajeCompleto(allMessajes[2].messages)
+            expect( mensaje ).to.be.a( 'string' );
+            expect( mensaje ).to.equal( 'Tenemos una falla con la terminal' );     
+        } catch (error) {
+            console.log("Ocurrió un error al obtener mensaje completo"+error);
             expect(error).to.be.undefined;
         }
     })
