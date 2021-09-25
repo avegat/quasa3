@@ -18,5 +18,5 @@ Iniciar el servidor:
     
 # Recursos
 Contrato de Interfaz.
-- [Contrato Interfaz.yaml](https://github.com/avegat/OperacionFuegoQuasar/blob/main/contrato_intefaz.yaml) donde se encuentra especificado el funcionamiento del microservicio. 
-- [Requerimiento]
+- [Contrato Interfaz.yaml](https://github.com/avegat/OperacionFuegoQuasar/blob/main/contrato_intefaz.yaml) donde se encuentra especificado el funcionamiento del microservicio, se realizo con el stardard OpenAPI Specification (OAS), puede consultar arrastrando el archivo o copiando el contenido en un edito swagger(https://editor.swagger.io/).
+- [Requerimiento].   
