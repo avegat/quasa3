@@ -16,7 +16,8 @@ Iniciar el servidor:
 
     $ npm start
     
-Ejecutar pruebas unitarias
+Ejecutar pruebas unitarias:
+
     $ npm npm run test:unit
 
 # Recursos
