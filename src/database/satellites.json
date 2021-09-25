@@ -1,1 +1,24 @@
-{"satellites":[{"name":"skywalker","distance":100,"coordinates":{"x":-500,"y":-200},"message":["hola","","",""]},{"name":"kenobi","distance":100,"coordinates":{"x":100,"y":-100},"message":["hola","","requiero",""]},{"name":"sato","distance":100,"coordinates":{"x":500,"y":100},"message":["hola","","requiero","apoyo"]}]}
+{
+	"satellites": [{
+		"name": "skywalker",
+		"distance": 100,
+		"coordinates": {
+			"x": -500,
+			"y": -200
+		}
+	}, {
+		"name": "kenobi",
+		"distance": 100,
+		"coordinates": {
+			"x": 100,
+			"y": -100
+		}
+	}, {
+		"name": "sato",
+		"distance": 100,
+		"coordinates": {
+			"x": 500,
+			"y": 100
+		}
+	}]
+}

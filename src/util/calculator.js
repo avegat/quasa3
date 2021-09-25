@@ -1,5 +1,4 @@
 const trilateration = require('node-trilateration');
-const { consultaCatalogosNegocioGestiones } = require('../../../../Documents/MERGE/microservicio-clientes-portafolio-mongodb/src/servicios/consultaCatalogos');
 
 
 function arrayRemove(arr, value) { 
