@@ -31,7 +31,7 @@ const getDataBaseInfo=()=>{
             if(completedDistanceMessages===object.satellites.length){
                 return {position:calculator.calculaPosicion(satellites),message:calculator.obtieneMensajeCompleto(messages)};
             }
-            
+            throw new Error;
     }catch(err){
         throw err;
     }        
