@@ -19,22 +19,18 @@ const obtieneMensajeCompleto=(satelliteMessages)=>{
         let longitudMayor=0;
         for(let i=0; i<satelliteMessages.length;i++)
         {
-            messages.push(arrayRemove(satelliteMessages[i],""));
-            satelliteMessages[i]={"message":arrayRemove(satelliteMessages[i],"")}
-            if(longitudMayor<satelliteMessages[i].length){
-                longitudMayor=satelliteMessages[i].length;
+            messages.push(satelliteMessages[i]);
+            if(longitudMayor<messages[i].length){
+                longitudMayor=messages[i].length;
                 posicionLongitudMayor=i;
             }
         }
-        let result = [];
-        let err;
         let mensaje=[];
-        messages.push([posicionLongitudMayor][0]);
+
         for (let i = 0; i < messages[posicionLongitudMayor].length; i++) {
-            err = true;
             for(let j=0;j<messages.length;j++)
             {
-                if(j!=posicionLongitudMayor&&!mensaje.includes(messages[j][i]))
+                if(messages[j][i]&&!mensaje.includes(messages[j][i]))
                 {
                     mensaje.push(messages[j][i])
                 }
