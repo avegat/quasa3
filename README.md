@@ -3,7 +3,7 @@ Operación fuego
 
 # Tecnologias
 El proyecto fue realizado con el lenguaje JavaScript que se ejecuta en el entorno de NodeJS utilizando el framework ExpressJS para la 
-implementación del Microservicio REST, mismo que se encuentra desplegado en Google Cloud [App Engine](https://mision-estrella.el.r.appspot.com).
+implementación del Microservicio REST, mismo que se encuentra desplegado en Google Cloud https://avegat-9999.ue.r.appspot.com.
 
 # Instalación y ejecución local
 Es necesario instalar el entorno de ejecución NodeJS  [nodejs](https://nodejs.org/) y [npmjs](https://www.npmjs.com/).
@@ -16,7 +16,7 @@ Iniciar el servidor:
 
     $ npm start
     
-Ejecutar pruebas unitarias:
+Ejecutar pruebas unitarias, funciones y endpoint registrado:
 
     $ npm npm run test:unit
 
