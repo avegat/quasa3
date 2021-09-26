@@ -2,7 +2,11 @@ const services =require('../service/quasarOperationService');
 const kenobiSatellite={name:"kenobi",x:-500,y:-200};
 const skywalkerSatellite={name:"skywalker",x:100,y:-100};
 const satoSatellite={name:"sato",x:500,y:100};
-
+/**
+ * @fileoverview Obtiene la posición mediante la información recibida.
+ * @author Arturo Vega
+ * @description  Valida la distancia de cada satelite recibido y coloca la distancia para calcular la posición del emisor.
+ */
 const getLocation=(req, res)=>{
     const satellites=[];
     const messages=[];
@@ -48,6 +52,13 @@ const getLocation=(req, res)=>{
     
 }
 
+
+
+/**
+ * @fileoverview Obtiene la posición de la información de satelites almacenada.
+ * @author Arturo Vega
+ * @description  Obtiene la posición de la información de satelites almacenada, en caso de no estar completa se envia valor de información faltante.
+ */
 const getPositionStored=(req,res,next)=>
 {
     try{
@@ -61,6 +72,11 @@ const getPositionStored=(req,res,next)=>
 
 }
 
+/**
+ * @fileoverview Agrega información de cada satelite para ser registrada.
+ * @author Arturo Vega
+ * @description  Agrega información de cada satelite para ser registrada en caso de estar completa regresa información de la posición del satelite.
+ */
 const addSatelliteDistance=(req, res, next)=>{
     const satellite={
         "name":req.params.id,

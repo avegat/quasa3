@@ -71,4 +71,32 @@ describe("getMessages",()=>{
             expect(error).to.be.undefined;
         }
     })
+
+    it("Obtiene posición de emisor", ()=>{
+        try {
+            let satelites=[];
+            satelites.push({
+                x:-500,
+                y:200,
+                distance:100
+            });
+            satelites.push({
+                x:100,
+                y:-100,
+                distance:115.5
+            });
+            satelites.push({
+                x:500,
+                y:100,
+                distance:147.2
+            });
+            let posicion=calculator.calculaPosicion(satelites)
+            expect( posicion.x ).to.be.equal( 30.903485416666673);
+            expect( posicion.y ).to.be.equal( 517.3740541666667);
+            
+        } catch (error) {
+            console.log("Ocurrió un error al obtener mensaje completo"+error);
+            expect(error).to.be.undefined;
+        }
+    })
 })

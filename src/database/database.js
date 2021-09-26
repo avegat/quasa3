@@ -1,5 +1,11 @@
 const  calculator = require('../util/calculator');
 
+/**
+ * @fileoverview Obtiene posición con la información de todos los satelites actualizada.
+ * @author Arturo Vega
+ * @description  Una vez completado la información de cada satelite, regresa la posición, caso contrario valores insuficientes
+ */
+
 
 const getDataBaseInfo=()=>{
     try{
@@ -31,12 +37,17 @@ const getDataBaseInfo=()=>{
             if(completedDistanceMessages===object.satellites.length){
                 return {position:calculator.calculaPosicion(satellites),message:calculator.obtieneMensajeCompleto(messages)};
             }
-            throw new Error;
+            throw Error;
     }catch(err){
         throw err;
     }        
 }
 
+/**
+ * @fileoverview Actualización de satelites.
+ * @author Arturo Vega
+ * @description  Actualiza la información almacenada en database/satellites.json. para obtener la posición una vez completo.
+ */
 
 const updateDataBase= (satellite)=>{
     var fs = require("fs");
