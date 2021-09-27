@@ -10,7 +10,6 @@ host: https://avegat-9999.ue.r.appspot.com
 
 basePath: /proyecto-quasar
 
-
 schemes:
   - https
 
