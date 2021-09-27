@@ -6,7 +6,7 @@ info:
   description: |
     API para recibir mensajes en los satelites pertenecientes a la alianza.
 
-host: mision-estrella.el.r.appspot.com
+host: https://avegat-9999.ue.r.appspot.com
 
 basePath: /proyecto-quasar
 
