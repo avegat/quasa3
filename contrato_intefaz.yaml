@@ -40,7 +40,7 @@ paths:
          schema:
           $ref: '#/definitions/posicion'
         404:
-          description: No es posible determinar ubicación
+          description: No es posible calcular posición
           
 
   '/topsecret_split/:{satellite_name}':
@@ -69,16 +69,12 @@ paths:
          schema:
           $ref: '#/definitions/posicion'
         404:
-          description: No existe suficiente información
+          description: No es posible calcular posición
+  '/topsecret_split/':        
     get:
       summary: "Obtiene mensaje por satelite individual"
       tags:
         - GetMessages  
-      parameters:
-        - in: path
-          name: satellite_name
-          required: true
-          type: string  
       responses:
         200:
          description: Ok
