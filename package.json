@@ -1,6 +1,6 @@
 {
   "name": "proyecto-quasar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Operación Quasar",
   "main": "src/principal.js",
   "scripts": {
